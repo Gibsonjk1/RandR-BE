@@ -1,0 +1,15 @@
+const swaggerAutogen = require('swagger-autogen')();
+
+const doc = {
+  info: {
+    title: 'RandR API',
+    description: 'API documentation for an exercise app called RandR'
+  },
+  host: 'localhost:3000'
+};
+
+const outputFile = './swagger.json';
+const routes = ['./routes/index.js'];
+
+
+swaggerAutogen(outputFile, routes, doc);

@@ -1,0 +1,29 @@
+{
+  "name": "randr-be",
+  "version": "1.0.0",
+  "description": "`npm init`",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "nodemon --watch src --exec ts-node src/app.ts",
+    "swagger": "node ./swagger.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.8.1",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "swagger-autogen": "^2.23.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "mongodb": "^6.20.0",
+    "swagger-ui-express": "^5.0.1",
+    "typed-rest-client": "^2.1.0"
+  }
+}
