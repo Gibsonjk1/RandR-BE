@@ -15,57 +15,16 @@
       "get": {
         "description": "",
         "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "default": {
+            "description": ""
           }
         }
       },
       "post": {
         "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "description": {
-                  "example": "any"
-                },
-                "dificulty": {
-                  "example": "any"
-                },
-                "isVariation": {
-                  "example": "any"
-                },
-                "progressionOrder": {
-                  "example": "any"
-                },
-                "muscleGroups": {
-                  "example": "any"
-                },
-                "equipment": {
-                  "example": "any"
-                },
-                "videoUrl": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
         "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "400": {
-            "description": "Bad Request"
+          "default": {
+            "description": ""
           }
         }
       }
@@ -82,8 +41,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       },
@@ -98,8 +57,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       },
@@ -114,8 +73,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       }
@@ -124,11 +83,8 @@
       "get": {
         "description": "",
         "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "default": {
+            "description": ""
           }
         }
       },
@@ -144,13 +100,13 @@
                 "username": {
                   "example": "any"
                 },
-                "email": {
-                  "example": "any"
-                },
                 "firstName": {
                   "example": "any"
                 },
                 "lastName": {
+                  "example": "any"
+                },
+                "email": {
                   "example": "any"
                 },
                 "password": {
@@ -161,9 +117,6 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Created"
-          },
           "400": {
             "description": "Bad Request"
           }
@@ -182,11 +135,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "default": {
+            "description": ""
           }
         }
       },
@@ -198,11 +148,35 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
+                },
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "400": {
+            "description": "Bad Request"
           }
         }
       },
@@ -217,8 +191,18 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api-docs/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
           }
         }
       }
