@@ -21,33 +21,20 @@ DELETE http://localhost:3000/user/68f464fc7bbc542f6fbcd2f3/
 
 //production
 ###
-GET https://cse341-af70.onrender.com/contacts
-###
-GET https://cse341-af70.onrender.com/contact/68d6a30ad69f7d241f9b5789
 
+GET https://randr-9pxd.onrender.com/user
 ###
-POST https://cse341-af70.onrender.com/contact/ 
+GET https://randr-9pxd.onrender.com/user/68f464fc7bbc542f6fbcd2f3
+
+//create user
+###
+POST https://randr-9pxd.onrender.com/user/ 
 content-type: application/json
 
 {
-    "firstName":"John",
-    "lastName":"Doe",
-    "email":"Imjohndoe@johndoe.com",
-    "favoriteColor":"turqouise",
-    "birthday":"1986-12-26"
+      "username": "BobbetteTheBuilder",
+      "email": "IamBobbette@builder.com",
+      "firstName": "Bobbette",
+      "lastName": "TheBuilder",
+      "password": "YesSheCan!"
 }
-
-###
-PUT https://cse341-af70.onrender.com/contact/68e01d179954d9f6b074cd0b/
-content-type: application/json
-
-{
-    "firstName":"Jane",
-    "lastName":"Doe",
-    "email":"Imnotjohndoe@johndoe.com",
-    "favoriteColor":"turqouise",
-    "birthday":"1986-12-26"
-}
-
-###
-DELETE https://cse341-af70.onrender.com/contact/68e01d179954d9f6b074cd0b/

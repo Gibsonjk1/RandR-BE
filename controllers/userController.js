@@ -38,11 +38,32 @@ const createUser = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-    res.status(200).json({message: 'Update user - Not yet implemented'});
+    const id = new ObjectId(req.params.id);
+    const updateUser = {
+      "username": req.body.username,
+      "email": req.body.email,
+      "firstName": req.body.firstName,
+      "lastName": req.body.lastName,
+      "password": req.body.password
+    }
+  const update = await mongodb.getDb().db('RandR').collection('User').replaceOne({_id: id}, updateUser);
+  if(update.modifiedCount > 0)
+    {
+      res.status(204).send();
+    }else{
+  res.status(400).json(err || 'an error occurred while updating the user');
+ }
 };
 
 const deleteUser = async (req, res) => {
-    res.status(200).json({message: 'Delete user - Not yet implemented'});
+  const id = new ObjectId(req.params.id);
+  const del = await mongodb.getDb().db('RandR').collection('User').deleteOne({_id: id});
+  if(del.deletedCount > 0)
+    {
+      res.status(204).send();
+    }else{
+  res.status(400).json(err || 'an error occurred while deleting the user');
+ }
 };
 
 module.exports = {

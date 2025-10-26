@@ -35,11 +35,35 @@ const createExercise = async (req, res) => {
 };
 
 const updateExercise = async (req, res) => {
-  res.status(200).json({message: 'Update exercise - Not yet implemented'});
+  const updateExercise = {
+      "name": req.body.name,
+      "description": req.body.description,
+      "dificulty": req.body.dificulty, 
+      "isVariation": req.body.isVariation, 
+      "progressionOrder": req.body.progressionOrder,
+      "muscleGroups": req.body.muscleGroups,
+      "equipment": req.body.equipment,
+      "videoUrl": req.body.videoUrl
+    }
+  const id = new ObjectId(req.params.id);
+  const update = await mongodb.getDb().db('RandR').collection('Exercise').replaceOne({_id: id}, updateExercise);
+  if(update.modifiedCount > 0)
+    {
+      res.status(204).send();
+    }else{
+  res.status(400).json(err || 'an error occurred while updating the exercise');
+ }
 };
 
 const deleteExercise = async (req, res) => {
-  res.status(200).json({message: 'Delete exercise - Not yet implemented'});
+  const id = new ObjectId(req.params.id);
+  const del = await mongodb.getDb().db('RandR').collection('Exercise').deleteOne({_id: id});
+  if(del.deletedCount > 0)
+    {
+      res.status(204).send();
+    }else{
+  res.status(400).json(err || 'an error occurred while deleting the exercise');
+ }
 };
 
 module.exports = {
